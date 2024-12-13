@@ -1,4 +1,4 @@
-package org.sid.billingservice.entities;
+package org.sid.bilingservice.entities;
 
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
@@ -7,7 +7,7 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 import org.sid.billingservice.model.Customer;
 
-import javax.persistence.*;
+/*import javax.persistence.*;*/
 import java.util.Date;
 import java.util.List;
 @Entity

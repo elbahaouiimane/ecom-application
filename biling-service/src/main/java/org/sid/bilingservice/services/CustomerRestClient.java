@@ -1,6 +1,6 @@
-package org.sid.billingservice.services;
+package org.sid.bilingservice.services;
 
-import org.sid.billingservice.model.Customer;
+import org.sid.bilingservice.model.Customer;
 import org.springframework.cloud.openfeign.FeignClient;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;

@@ -1,7 +1,7 @@
-package org.sid.billingservice.repository;
+package org.sid.bilingservice.repository;
 
-import org.sid.billingservice.entities.Bill;
-import org.sid.billingservice.entities.ProductItem;
+import org.sid.bilingservice.entities.Bill;
+import org.sid.bilingservice.entities.ProductItem;
 import org.springframework.data.jpa.repository.JpaRepository;
 
 public interface ProductItemRepository extends JpaRepository<ProductItem,Long> {

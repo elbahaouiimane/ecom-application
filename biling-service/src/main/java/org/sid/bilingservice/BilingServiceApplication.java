@@ -1,13 +1,13 @@
-package org.sid.billingservice;
+package org.sid.bilingservice;
 
-import org.sid.billingservice.entities.Bill;
-import org.sid.billingservice.entities.ProductItem;
-import org.sid.billingservice.model.Customer;
-import org.sid.billingservice.model.Product;
-import org.sid.billingservice.repository.BillRepository;
-import org.sid.billingservice.repository.ProductItemRepository;
-import org.sid.billingservice.services.CustomerRestClient;
-import org.sid.billingservice.services.ProductRestClient;
+import org.sid.bilingservice.entities.Bill;
+import org.sid.bilingservice.entities.ProductItem;
+import org.sid.bilingservice.model.Customer;
+import org.sid.bilingservice.model.Product;
+import org.sid.bilingservice.repository.BillRepository;
+import org.sid.bilingservice.repository.ProductItemRepository;
+import org.sid.bilingservice.services.CustomerRestClient;
+import org.sid.bilingservice.services.ProductRestClient;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
@@ -21,10 +21,10 @@ import java.util.Random;
 
 @SpringBootApplication
 @EnableFeignClients
-public class BillingServiceApplication {
+public class BilingServiceApplication {
 
     public static void main(String[] args) {
-        SpringApplication.run(BillingServiceApplication.class, args);
+        SpringApplication.run(BilingServiceApplication.class, args);
     }
     @Bean
     CommandLineRunner start(BillRepository billRepository,

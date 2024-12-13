@@ -1,6 +1,6 @@
-package org.sid.billingservice.repository;
+package org.sid.bilingservice.repository;
 
-import org.sid.billingservice.entities.Bill;
+import org.sid.bilingservice.entities.Bill;
 import org.springframework.data.jpa.repository.JpaRepository;
 
 public interface BillRepository extends JpaRepository<Bill,Long> {

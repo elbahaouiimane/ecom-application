@@ -1,10 +1,10 @@
-package org.sid.billingservice.web;
+package org.sid.bilingservice.web;
 
-import org.sid.billingservice.entities.Bill;
-import org.sid.billingservice.repository.BillRepository;
-import org.sid.billingservice.repository.ProductItemRepository;
-import org.sid.billingservice.services.CustomerRestClient;
-import org.sid.billingservice.services.ProductRestClient;
+import org.sid.bilingservice.entities.Bill;
+import org.sid.bilingservice.repository.BillRepository;
+import org.sid.bilingservice.repository.ProductItemRepository;
+import org.sid.bilingservice.services.CustomerRestClient;
+import org.sid.bilingservice.services.ProductRestClient;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
