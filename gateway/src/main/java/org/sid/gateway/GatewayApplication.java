@@ -7,16 +7,24 @@ import org.springframework.cloud.gateway.discovery.DiscoveryClientRouteDefinitio
 import org.springframework.cloud.gateway.discovery.DiscoveryLocatorProperties;
 import org.springframework.context.annotation.Bean;
 
+
 @SpringBootApplication
-public class GateweyServiceApplication {
+public class GatewayServiceApplication {
 
     public static void main(String[] args) {
-        SpringApplication.run(GateweyServiceApplication.class, args);
+        SpringApplication.run(GatewayServiceApplication.class, args);
     }
 
+    //@Bean
+    public RouteLocator routes(RouteLocatorBuilder builder){
+        return builder.routes()
+                .route(r->r.path("/customers/**").uri("lb://CUSTOMER-SERVICE"))
+                .route(r->r.path("/products/**").uri("lb://INVETORY-SERVICE"))
+                .build();
+    }
     @Bean
-    DiscoveryClientRouteDefinitionLocator locator(
-            ReactiveDiscoveryClient rdc, DiscoveryLocatorProperties dlp){
+    public DiscoveryClientRouteDefinitionLocator dynamicRoutes(ReactiveDiscoveryClient rdc, DiscoveryLocatorProperties dlp){
         return new DiscoveryClientRouteDefinitionLocator(rdc,dlp);
     }
+
 }

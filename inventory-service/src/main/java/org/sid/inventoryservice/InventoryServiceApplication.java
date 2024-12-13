@@ -6,8 +6,10 @@ import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.annotation.Bean;
+import org.springframework.data.rest.core.config.RepositoryRestConfiguration;
 
-import java.util.UUID;
+import java.util.List;
+/*import java.util.UUID;*/
 
 @SpringBootApplication
 public class InventoryServiceApplication {
@@ -17,30 +19,25 @@ public class InventoryServiceApplication {
     }
 
     @Bean
-    CommandLineRunner commandLineRunner(ProductRepository productRepository){
+    CommandLineRunner start(ProductRepository productRepository, RepositoryRestConfiguration restConfiguration)
+    {
         return args -> {
-            productRepository.save(Product.builder()
-                    .id(UUID.randomUUID().toString())
-                    .name("Computer")
-                    .price(3200)
-                    .quantity(11)
-                    .build());
-            productRepository.save(Product.builder()
-                    .id(UUID.randomUUID().toString())
-                    .name("Printer")
-                    .price(1299)
-                    .quantity(10)
-                    .build());
-            productRepository.save(Product.builder()
-                    .id(UUID.randomUUID().toString())
-                    .name("Smart Phone")
-                    .price(5400)
-                    .quantity(8)
-                    .build());
+            restConfiguration.exposeIdsFor(Product.class);
+            productRepository.saveAll(
+                    List.of(
+                            Product.builder().name("Computer").quantity(12).price(1200).build(),
+                            Product.builder().name("Printer").quantity(32).price(120).build(),
+                            Product.builder().name("Smartphone").quantity(31).price(900).build(),
+                            Product.builder().name("Tablet").quantity(25).price(500).build(),
+                            Product.builder().name("Headphones").quantity(50).price(80).build(),
+                            Product.builder().name("Keyboard").quantity(40).price(45).build(),
+                            Product.builder().name("Mouse").quantity(60).price(25).build(),
+                            Product.builder().name("Monitor").quantity(20).price(300).build(),
+                            Product.builder().name("Laptop").quantity(15).price(1500).build()
 
-            productRepository.findAll().forEach(p->{
-                System.out.println(p.toString());
-            });
+
+                    )
+            );
         };
     }
 

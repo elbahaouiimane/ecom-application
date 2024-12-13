@@ -10,6 +10,7 @@
         <module name="customer-service" />
         <module name="gateway" />
         <module name="discovery-service" />
+        <module name="biling-service" />
       </profile>
       <profile name="Annotation profile for inventory-service" enabled="true">
         <sourceOutputDir name="target/generated-sources/annotations" />
@@ -18,7 +19,6 @@
         <processorPath useClasspath="false">
           <entry name="$MAVEN_REPOSITORY$/org/projectlombok/lombok/unknown/lombok-unknown.jar" />
         </processorPath>
-        <module name="biling-service" />
         <module name="inventory-service" />
       </profile>
     </annotationProcessing>
