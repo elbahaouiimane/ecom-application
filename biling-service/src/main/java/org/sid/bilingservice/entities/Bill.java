@@ -5,7 +5,7 @@ import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
-import org.sid.billingservice.model.Customer;
+import org.sid.bilingservice.model.Customer;
 
 /*import javax.persistence.*;*/
 import java.util.Date;
